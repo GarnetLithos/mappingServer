@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+ <!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="testMapper">
+
+	<resultMap id="ResultTestObject" type="com.mapping.server.common.model.TestObject">
+		<id column="testInt" jdbcType="BIGINT" property="testInt" />
+		<result column="testString" jdbcType="VARCHAR" property="testString" />
+	</resultMap>
+	
+	<!-- GET -->
+	<select id="testGet" resultMap="ResultTestObject">
+		SELECT	/*!99999 CommonRepository.testGet() */
+			*
+		FROM
+			test
+		WHERE
+			testInt = 1
+	</select>
+	
+	
+</mapper> 
