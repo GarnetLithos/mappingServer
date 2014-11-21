@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mapping.server.common.model.TestObject;
+import com.mapping.server.main.model.User;
 
 @Repository
 public class CommonRepository {
@@ -12,8 +12,8 @@ public class CommonRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public TestObject testRepository() {
-		return sqlSession.selectOne("testMapper.testGet");
+	public User testRepository() {
+		return sqlSession.selectOne("userMapper.testGetUser");
 	}
 
 }

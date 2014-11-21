@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mapping.server.common.model.TestObject;
 import com.mapping.server.common.service.CommonService;
+import com.mapping.server.main.model.User;
 
 
 @Controller
-@RequestMapping(value = "/testGet")
+@RequestMapping(value = "/testGetUser")
 public class CommonController {
 	
 	@Autowired
@@ -19,7 +19,7 @@ public class CommonController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public TestObject testGet(){
-		return commonService.testService();
+	public User testGet(){
+		return commonService.testGetUser();
 	}
 }
